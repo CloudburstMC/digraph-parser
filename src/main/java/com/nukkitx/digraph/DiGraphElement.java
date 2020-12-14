@@ -29,24 +29,44 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-package com.paypal.digraph.parser;
+package com.nukkitx.digraph;
 
-public class GraphEdge extends GraphElement
-{
-	public GraphEdge(String id, GraphNode node1, GraphNode node2) {
-		super(id);
-		mNode1 = node1;
-		mNode2 = node2;
-	}
+import java.util.HashMap;
+import java.util.Map;
 
-	public GraphNode getNode1() {
-		return mNode1;
-	}
+public class DiGraphElement {
+    protected String id;
+    protected final Map<String, Object> attributes = new HashMap<>();
 
-	public GraphNode getNode2() {
-		return mNode2;
-	}
+    public DiGraphElement(String id) {
+        this.id = id;
+    }
 
-	protected GraphNode mNode1;
-	protected GraphNode mNode2;
+    public void setAttribute(String key, Object value) {
+        attributes.put(key, value);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Object getAttribute(String key) {
+        return attributes.get(key);
+    }
+
+    public Map<String, Object> getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(Map<String, Object> attrs) {
+        attributes.putAll(attrs);
+    }
+
+    public String toString() {
+        return id + attributes;
+    }
 }

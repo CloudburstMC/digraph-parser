@@ -29,11 +29,18 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-package com.paypal.digraph.parser;
+package com.nukkitx.digraph.parser;
 
-public class GraphNode extends GraphElement
-{
-	public GraphNode(String id) {
-		super(id);
-	}
+public class GraphParserException extends RuntimeException {
+    public GraphParserException(String msg) {
+        super(msg);
+    }
+
+    public GraphParserException(Throwable t) {
+        super(t);
+    }
+
+    public GraphParserException(String msg, Throwable t) {
+        super(msg, t);
+    }
 }

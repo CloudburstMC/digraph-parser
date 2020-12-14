@@ -29,19 +29,28 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-package com.paypal.digraph.parser;
+package com.nukkitx.digraph;
 
-public class GraphParserException extends RuntimeException
-{
-	public GraphParserException(String msg) {
-		super(msg);
-	}
+public class DiGraphEdge extends DiGraphElement {
+    protected final DiGraphNode mNode1;
+    protected final DiGraphNode mNode2;
 
-	public GraphParserException(Throwable t) {
-		super(t);
-	}
+    public DiGraphEdge(String id, DiGraphNode node1, DiGraphNode node2) {
+        super(id);
+        mNode1 = node1;
+        mNode2 = node2;
+    }
 
-	public GraphParserException(String msg, Throwable t) {
-		super(msg, t);
-	}
+    public DiGraphNode getNode1() {
+        return mNode1;
+    }
+
+    public DiGraphNode getNode2() {
+        return mNode2;
+    }
+
+    @Override
+    public String toString() {
+        return "Edge-" + super.toString();
+    }
 }

@@ -29,20 +29,15 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-package com.paypal.digraph.parser;
+package com.nukkitx.digraph;
 
-import org.antlr.v4.runtime.misc.TestRig;
+public class DiGraphNode extends DiGraphElement {
+    public DiGraphNode(String id) {
+        super(id);
+    }
 
-public class RunAntlrTestRig
-{
-	public static void main(String[] args) throws Exception {
-		String grammarName = "com.paypal.digraph.parser.antlr.DOT";
-		String startRuleName = "graph";
-		
-		String[] testArgs1 = {grammarName, startRuleName, "-tree", "src/test/resources/test3.dg"};
-		TestRig.main(testArgs1);
-		
-		String[] testArgs2 = {grammarName, startRuleName, "-gui", "src/test/resources/test3.dg"};
-		TestRig.main(testArgs2);
-	}
+    @Override
+    public String toString() {
+        return "Node-" + super.toString();
+    }
 }

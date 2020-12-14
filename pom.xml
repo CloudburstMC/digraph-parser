@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.paypal.digraph</groupId>
+  <groupId>com.nukkitx.digraph</groupId>
   <artifactId>digraph-parser</artifactId>
   <packaging>jar</packaging>
-  <version>1.0</version>
+  <version>1.1.0-SNAPSHOT</version>
   <name>digraph-parser</name>
   <url>https://github.com/paypal/digraph-parser</url>
   <description>Java parser for digraph DSL (Graphviz DOT language)</description>
@@ -65,8 +65,8 @@
 		  <groupId>org.apache.maven.plugins</groupId>
 		  <artifactId>maven-compiler-plugin</artifactId>
 		  <configuration>
-			<source>1.5</source>
-			<target>1.5</target>
+			<source>1.8</source>
+			<target>1.8</target>
 		  </configuration>
 		</plugin>
 		<plugin>

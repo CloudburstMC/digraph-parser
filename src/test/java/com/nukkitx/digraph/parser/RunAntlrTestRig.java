@@ -29,41 +29,19 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-package com.paypal.digraph.parser;
+package com.nukkitx.digraph.parser;
 
-import java.util.HashMap;
-import java.util.Map;
+import org.antlr.v4.runtime.misc.TestRig;
 
-public class GraphElement
-{
-	public GraphElement(String id) {
-		mId = id;
-	}
+public class RunAntlrTestRig {
+    public static void main(String[] args) throws Exception {
+        String grammarName = "com.paypal.digraph.parser.antlr.DOT";
+        String startRuleName = "graph";
 
-	public void setAttribute(String key, Object value) {
-		mAttrs.put(key, value);
-	}
+        String[] testArgs1 = {grammarName, startRuleName, "-tree", "src/test/resources/test3.dg"};
+        TestRig.main(testArgs1);
 
-	public void setAttributes(Map<String,Object> attrs) {
-		mAttrs.putAll(attrs);
-	}
-
-	public String getId() {
-		return mId;
-	}
-
-	public Object getAttribute(String key) {
-		return mAttrs.get(key);
-	}
-
-	public Map<String,Object> getAttributes() {
-		return mAttrs;
-	}
-
-	public String toString() {
-		return getClass().getSimpleName() + "-" + mId + mAttrs;
-	}
-
-	protected String mId;
-	protected Map<String,Object> mAttrs = new HashMap<String,Object>();
+        String[] testArgs2 = {grammarName, startRuleName, "-gui", "src/test/resources/test3.dg"};
+        TestRig.main(testArgs2);
+    }
 }
